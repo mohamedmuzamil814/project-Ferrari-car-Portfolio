@@ -1,0 +1,260 @@
+/* FERRARI 296 GTB — LUXURY DESIGN SYSTEM */
+
+:root {
+  /* Color Palette Tokens */
+  --rosso: #D40000;
+  --rosso-deep: #9B0000;
+  --rosso-glow: rgba(212, 0, 0, 0.35);
+  --white-room: #FAFAF8;
+  --white: #FFFFFF;
+  --carbon: #111111;
+  --graphite: #2B2B2B;
+  --graphite-light: #3D3D3D;
+  --silk: #C9C9C4;
+  --silk-muted: rgba(201, 201, 196, 0.4);
+  --silk-subtle: rgba(201, 201, 196, 0.15);
+  --champagne: #C8A96A;
+  --champagne-glow: rgba(200, 169, 106, 0.25);
+
+  /* Typography */
+  --font-display: 'Italiana', serif;
+  --font-body: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'Space Grotesk', monospace, sans-serif;
+
+  /* Elevation & Shadows */
+  --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.04);
+  --shadow-luxury: 0 20px 60px rgba(0, 0, 0, 0.08);
+  --shadow-carbon: 0 25px 70px rgba(0, 0, 0, 0.55);
+  --shadow-rosso: 0 10px 35px rgba(212, 0, 0, 0.28);
+
+  /* Transitions */
+  --ease-luxury: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: all 0.45s var(--ease-luxury);
+}
+
+/* Reset & Global Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-body);
+  background-color: var(--white-room);
+  color: var(--carbon);
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  overflow-x: hidden;
+  line-height: 1.6;
+  background-color: var(--white-room);
+}
+
+/* Typography Utilities */
+h1, h2, h3, .font-serif {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+  font-weight: 400;
+}
+
+.font-mono-numbers {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.03em;
+}
+
+.text-label {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+
+/* Buttons */
+.btn-pill-rosso {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background: linear-gradient(135deg, var(--rosso) 0%, var(--rosso-deep) 100%);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 0.85rem 2.2rem;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  box-shadow: var(--shadow-rosso);
+  transition: var(--transition-smooth);
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-pill-rosso:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 40px rgba(212, 0, 0, 0.45);
+  background: linear-gradient(135deg, #e60000 0%, var(--rosso) 100%);
+}
+
+.btn-pill-rosso:active {
+  transform: translateY(0);
+}
+
+.btn-pill-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  color: var(--carbon);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 0.85rem 1.8rem;
+  border-radius: 9999px;
+  border: 1px solid var(--silk);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  text-decoration: none;
+}
+
+.btn-pill-ghost:hover {
+  background: var(--white);
+  border-color: var(--carbon);
+  transform: translateY(-2px);
+}
+
+.btn-pill-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 0.85rem 2rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  text-decoration: none;
+}
+
+.btn-pill-dark:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: var(--white);
+  transform: translateY(-2px);
+}
+
+/* Hairline Silk Dividers */
+.hairline-silk {
+  border: none;
+  border-top: 1px solid var(--silk-muted);
+}
+
+.hairline-dark {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Glassmorphism Header */
+.glass-nav {
+  background: rgba(250, 250, 248, 0.82);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid var(--silk-subtle);
+  transition: var(--transition-smooth);
+}
+
+.glass-nav.scrolled-dark {
+  background: rgba(17, 17, 17, 0.85);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Section Containers */
+.section-pad {
+  padding: 7rem 2rem;
+}
+
+@media (min-width: 1024px) {
+  .section-pad {
+    padding: 9rem 4rem;
+  }
+}
+
+.container-max {
+  max-width: 1360px;
+  margin: 0 auto;
+}
+
+/* Modal Overlay */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 10, 10, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleUp {
+  from { opacity: 0; transform: scale(0.96) translateY(12px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.modal-content {
+  background: var(--carbon);
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+  max-width: 580px;
+  width: 100%;
+  padding: 2.5rem;
+  position: relative;
+  box-shadow: 0 35px 80px rgba(0, 0, 0, 0.8);
+  animation: scaleUp 0.35s var(--ease-luxury);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--carbon);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--graphite);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--rosso);
+}
